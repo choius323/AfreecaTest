@@ -25,7 +25,7 @@ API의 Key는 `local.properties`의 `key.afreeca`에 저장해서 사용했습�
 <img src="https://github.com/choius323/AfreecaTest/blob/master/image/broad_list_drag.gif?raw=true" width="300"/>
 
 - 카테고리 변경
-<img src="https://github.com/choius323/AfreecaTest/blob/master/image/broad_detail.gif?raw=true" width="300"/>
+<img src="https://github.com/choius323/AfreecaTest/blob/master/image/category_change.gif?raw=true" width="300"/>
 
 - 생방송 상세 정보
 <img src="https://github.com/choius323/AfreecaTest/blob/master/image/broad_detail.gif?raw=true" width="300"/>
