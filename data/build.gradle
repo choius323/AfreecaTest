@@ -5,6 +5,9 @@ plugins {
     id 'kotlin-kapt'
 }
 
+def properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
 android {
     namespace 'com.choius323.data'
     compileSdk 31
@@ -15,6 +18,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField("String", "KEY_AFREECA", properties["key.afreeca"])
     }
 
     buildTypes {

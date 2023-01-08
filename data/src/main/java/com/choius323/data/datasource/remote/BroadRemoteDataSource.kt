@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface BroadRemoteDataSource {
     suspend fun getCategory(): Result<List<Category>>
-    fun getBroadList(category: Category): Flow<PagingData<Broad>>
+    fun getBroadList(category: Category, pageSize: Int = 60): Flow<PagingData<Broad>>
 }
