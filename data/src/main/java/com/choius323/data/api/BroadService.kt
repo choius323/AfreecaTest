@@ -1,5 +1,6 @@
 package com.choius323.data.api
 
+import com.choius323.data.model.BroadCategoryResponse
 import com.choius323.data.model.BroadListResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -13,4 +14,9 @@ interface BroadService {
         @Query("select_value") categoryValue: String,
         @Query("page_no") page: Int,
     ): Response<BroadListResponse>
+
+    @GET("category/list")
+    suspend fun getCategoryList(
+        @Query("client_id") id: String,
+    ): Response<BroadCategoryResponse>
 }
