@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">AfreecaTest</string>
 
+    <!--  방송 목록  -->
+    <string name="item_broad_view_count">%1$s명</string>
+    <string name="empty_broad_list">현재 진행중인 생방송이 없습니다.</string>
+
     <!--  방송 상세 정보  -->
     <string name="title_activity_broad_detail">상세 정보</string>
 </resources>
