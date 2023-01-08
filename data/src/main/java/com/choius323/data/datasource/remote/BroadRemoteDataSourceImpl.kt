@@ -16,7 +16,10 @@ class BroadRemoteDataSourceImpl @Inject constructor(
 ) : BroadRemoteDataSource {
 
     override suspend fun getCategory(): Result<List<Category>> {
-        TODO()
+        return runCatching {
+            broadService.getCategoryList(KEY_AFREECA).body()?.categories?.map { it.toCategory() }
+                ?: emptyList()
+        }
     }
 
     override fun getBroadList(category: Category, pageSize: Int): Flow<PagingData<Broad>> {
