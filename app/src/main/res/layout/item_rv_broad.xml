@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="broad"
+            type="com.choius323.domain.model.Broad" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_item_broad_thumb"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45"
+                app:loadImageByUri="@{broad.thumb}"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.CornerSize10Percent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_item_broad_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{broad.title}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_item_broad_user_nick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/img_item_broad_thumb"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="spread"
+                tools:text="방속 제목" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_item_user_profile"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_item_broad_view_count"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="@id/tv_item_broad_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_item_broad_title"
+                app:loadImageByUri="@{broad.profileImg}"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.CornerSize50Percent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_item_broad_user_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{broad.userNick}"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/img_item_user_profile"
+                app:layout_constraintStart_toEndOf="@id/img_item_user_profile"
+                app:layout_constraintTop_toTopOf="@id/img_item_user_profile"
+                tools:text="BJ 이름" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_item_broad_view_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/item_broad_view_count(broad.totalViewCnt)}"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_item_broad_title"
+                app:layout_constraintTop_toBottomOf="@id/img_item_user_profile"
+                tools:text="153명" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
