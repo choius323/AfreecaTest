@@ -9,6 +9,13 @@ UI는 방송 목록을 보여주는 Activity와 선택한 카테고리에 따라
 
 API의 Key는 `local.properties`의 `key.afreeca`에 저장해서 사용했습니다.
 
+
+
+Android SDK
+
+- minSDK - 23
+- targetSDK - 31
+
 사용 라이브러리
 
 - Jetpack paging3, ViewModel
